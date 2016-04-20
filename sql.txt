@@ -5,3 +5,24 @@ CREATE TABLE `dbtest`.`users` (
 `password` VARCHAR( 50 ) NOT NULL ,
 UNIQUE (`username`)
 ) ENGINE = MYISAM ;
+
+
+CREATE TABLE `profs` (
+`prof_id` INT( 5 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`fname` VARCHAR( 25 ) NOT NULL ,
+`lname` VARCHAR( 25 ) NOT NULL ,
+`courses` VARCHAR( 200 ), 
+`website` VARCHAR( 500 )
+) ENGINE = MYISAM ;
+
+
+INSERT INTO profs(fname, lname, office, courses, website) VALUES('Perry', 'Donham', 'PSY228A', 'CS411', 'http://sites.bu.edu/perryd/')
+
+INSERT INTO profs(fname, lname, office, courses, website) VALUES('Peter', 'Gacs', 'MCS277', 'CS237', 'http://www.cs.bu.edu/fac/gacs/')
+
+
+INSERT INTO profs(fname, lname, office, courses, website) VALUES('Mark', 'Crovella', 'MCS274', 'N/A', 'http://www.cs.bu.edu/~crovella/')
+
+INSERT INTO profs(fname, lname, office, courses, website) VALUES('Wayne', 'Snyder', 'MCS290', 'CS591, CS112', 'http://www.cs.bu.edu/fac/snyder/')
+
+INSERT INTO profs(fname, lname, office, courses, website) VALUES('John', 'Byers', 'MCS270', 'CS330', 'http://www.cs.bu.edu/~byers/')
