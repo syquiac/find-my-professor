@@ -2,10 +2,14 @@
 session_start();
 include_once 'dbconnect.php';
 
-if(isset($_SESSION['user'])!="")
-{
- header("Location: findmyprofessor.php");
-}
+
+//if(isset($_SESSION['user']) == "admin"){
+//	header("Location: add.php");
+//}
+//if(isset($_SESSION['user'])!="")
+//{
+ //header("Location: default.php");
+//}
 if(isset($_POST['btn-login']))
 {
  $uname = mysql_real_escape_string($_POST['uname']);
@@ -14,9 +18,15 @@ if(isset($_POST['btn-login']))
  $row=mysql_fetch_array($res);
  if($row['password']==md5($upass))
  {
-  $_SESSION['user'] = $row['user_id'];
-  header("Location: findmyprofessor.php");
+ 	if($row['username'] == 'admin'){
+ 	$_SESSION['user'] = $row['user_id'];
+ 	header("Location: add.php");
+ 	}
+ 	else {	
+  	$_SESSION['user'] = $row['user_id'];
+  	header("Location: default.php");
  }
+}
  else
  {
   ?>
@@ -31,13 +41,26 @@ if(isset($_POST['btn-login']))
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>cleartuts - Login & Registration System</title>
-<link rel="stylesheet" href="style.css" type="text/css" />
+<!--<link rel="stylesheet" href="style.css" type="text/css" />-->
+<style>
+	body{
+		background-color: #cc0000;
+	}
+	h2{
+		color:white;
+		font-family: Arial;
+		text-align: center;
+		font-size: 72pt;
+	}
+</style>
+</style>
 </head>
 <body>
+<h2>Welcome to Find My Professor!</h2>
 <center>
 <div id="login-form">
 <form method="post">
-<table align="center" width="30%" border="0">
+<table align="center" border="0">
 <tr>
 <td><input type="text" name="uname" placeholder="Your User Name" required /></td>
 </tr>
