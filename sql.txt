@@ -11,8 +11,11 @@ CREATE TABLE `profs` (
 `prof_id` INT( 5 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 `fname` VARCHAR( 25 ) NOT NULL ,
 `lname` VARCHAR( 25 ) NOT NULL ,
-`courses` VARCHAR( 200 ), 
-`website` VARCHAR( 500 )
+`courses` VARCHAR( 200 ),
+`office` VARCHAR( 200 ),
+`hours` VARCHAR( 400 ), 
+`website` VARCHAR( 500 ),
+`img` VARCHAR( 400 ),
 ) ENGINE = MYISAM ;
 
 

@@ -44,14 +44,42 @@ if(isset($_POST['btn-login']))
 <!--<link rel="stylesheet" href="style.css" type="text/css" />-->
 <style>
 	body{
-		background-color: #cc0000;
+		background-image: url("CummingtonII.jpg");
+		background-size: 1300px, 760px;
+		background-repeat: no-repeat;
 	}
 	h2{
+		text-shadow: 4px 4px black;
 		color:white;
 		font-family: Arial;
 		text-align: center;
 		font-size: 72pt;
 	}
+	input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+	input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+    #register{
+
+        background-color:#ffffff;
+        font-size: 20pt;
+    }
+
 </style>
 </style>
 </head>
@@ -61,18 +89,18 @@ if(isset($_POST['btn-login']))
 <div id="login-form">
 <form method="post">
 <table align="center" border="0">
-<tr>
-<td><input type="text" name="uname" placeholder="Your User Name" required /></td>
-</tr>
-<tr>
-<td><input type="password" name="pass" placeholder="Your Password" required /></td>
-</tr>
-<tr>
-<td><button type="submit" name="btn-login">Sign In</button></td>
-</tr>
-<tr>
-<td><a href="Register.php">Sign Up Here</a></td>
-</tr>
+    <tr>
+    <td><input type="text" name="uname" placeholder="Your Username" required /></td>
+    </tr>
+    <tr>
+    <td><input type="password" name="pass" placeholder="Your Password" required /></td>
+    </tr>
+    <tr>
+    <td><button type="submit" name="btn-login">Sign In</button></td>
+    </tr>
+    <tr>
+    <td><a id="register" href="Register.php">New user? Register here!</a></td>
+    </tr>
 </table>
 </form>
 </div>
